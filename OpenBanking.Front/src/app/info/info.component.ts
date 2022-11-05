@@ -25,7 +25,6 @@ export class InfoComponent implements OnInit {
   }
   printData() {
     console.log(this.infoService.getParticipant());
-    console.log(this.infoService.getParticipant().addressLine1);
-    console.log(this.infoService.getParticipant()["addressLine1"]);
+    console.log(this.infoService.getParticipant().status);
   }
 }

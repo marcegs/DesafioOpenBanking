@@ -8,24 +8,24 @@ public class ParticipantByIdDto : IMapFrom<Participant>
 {
     public Guid ParticipantId { get; set; }
     public string Status { get; set; }
-    public string OrganisationName { get; set; }
-    public DateTime CreatedOn { get; set; }
-    public string LegalEntityName { get; set; }
-    public string CountryOfRegistration { get; set; }
-    public string CompanyRegister { get; set; }
-    public string RegistrationNumber { get; set; }
-    public string? RegistrationId { get; set; }
-    public string RegisteredName { get; set; }
-    public string AddressLine1 { get; set; }
-    public string AddressLine2 { get; set; }
-    public string City { get; set; }
-    public string Postcode { get; set; }
-    public string Country { get; set; }
-    public string? ParentOrganisationReference { get; set; }
-
-    public IEnumerable<AuthorisationServerDto>? AuthorisationServers { get; set; }
-    public IEnumerable<OrgDomainClaimDto>? OrgDomainClaims { get; set; }
-    public IEnumerable<OrgDomainRoleClaimDto>? OrgDomainRoleClaims { get; set; }
+    // public string OrganisationName { get; set; }
+    // public DateTime CreatedOn { get; set; }
+    // public string LegalEntityName { get; set; }
+    // public string CountryOfRegistration { get; set; }
+    // public string CompanyRegister { get; set; }
+    // public string RegistrationNumber { get; set; }
+    // public string? RegistrationId { get; set; }
+    // public string RegisteredName { get; set; }
+    // public string AddressLine1 { get; set; }
+    // public string AddressLine2 { get; set; }
+    // public string City { get; set; }
+    // public string Postcode { get; set; }
+    // public string Country { get; set; }
+    // public string? ParentOrganisationReference { get; set; }
+    //
+    // public IEnumerable<AuthorisationServerDto>? AuthorisationServers { get; set; }
+    // public IEnumerable<OrgDomainClaimDto>? OrgDomainClaims { get; set; }
+    // public IEnumerable<OrgDomainRoleClaimDto>? OrgDomainRoleClaims { get; set; }
 
     public class AuthorisationServerDto : IMapFrom<AuthorisationServer>
     {

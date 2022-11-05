@@ -9,13 +9,16 @@ export class InfoService {
   constructor(
     private httpClient: OpenBankingHttpClientService<ParticipantByIdDto>
   ) {}
-  private ParticipantByIdDto: ParticipantByIdDto = new ParticipantByIdDto;
-  setParticipantById(id: String) {
-    this.httpClient.get('api/v1/participant/' + id).subscribe(data => {
-      this.ParticipantByIdDto = data;
-    });
-  }
+  private ParticipantByIdDto: ParticipantByIdDto = new ParticipantByIdDto();
   getParticipant(): ParticipantByIdDto {
     return this.ParticipantByIdDto;
+  }
+  setParticipantById(id: String) {
+    this.httpClient.get('api/v1/participant/' + id).subscribe((data) => {
+      this.ParticipantByIdDto = data;
+      console.log(this.ParticipantByIdDto);
+      console.log(data);
+      console.log(this.ParticipantByIdDto.status);
+    });
   }
 }
