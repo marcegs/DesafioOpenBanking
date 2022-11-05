@@ -27,6 +27,5 @@ namespace Domain.Entities
         public IEnumerable<AuthorisationServer>? AuthorisationServers { get; set; }
         public IEnumerable<OrgDomainClaim>? OrgDomainClaims { get; set; }
         public IEnumerable<OrgDomainRoleClaim>? OrgDomainRoleClaims { get; set; }
-
     }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ParticipantDto } from 'src/app/models/dtos/participant-dto';
+import { ParticipantsDto } from 'src/app/models/dtos/participant-dto';
 import { ParticipantService } from 'src/app/shared/participant-service.service';
 
 @Component({
@@ -8,12 +8,14 @@ import { ParticipantService } from 'src/app/shared/participant-service.service';
   styleUrls: ['./paricipants-list.component.css'],
 })
 export class ParicipantsListComponent implements OnInit {
-  ParticipantDto: ParticipantDto = new ParticipantDto();
 
-  constructor(private OpenBankingService: ParticipantService) {}
+  constructor(private ParticipantService: ParticipantService) {}
   ngOnInit(): void {
-    this.OpenBankingService.getParticipants().subscribe((data) => {
-      this.ParticipantDto = data;
-    });
+    this.ParticipantService.setParticipantsDto()
+  }
+
+  getParticipants() : ParticipantsDto
+  {
+    return this.ParticipantService.getParticipants();
   }
 }

@@ -29,6 +29,5 @@ namespace Domain.Entities
 
         public Guid ParticipantId { get; set; }
         public Participant Participant { get; set; }
-
     }
 }

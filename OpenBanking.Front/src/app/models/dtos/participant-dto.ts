@@ -1,4 +1,4 @@
-export class ParticipantDto {
+export class ParticipantsDto {
   count: number | undefined
   participants: ParticipantList[] | undefined
 }

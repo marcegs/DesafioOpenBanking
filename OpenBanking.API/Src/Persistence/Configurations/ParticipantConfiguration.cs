@@ -14,6 +14,5 @@ public class ParticipantConfiguration : IEntityTypeConfiguration<Participant>
         builder.HasMany(org => org.AuthorisationServers).WithOne(authServer => authServer.Participant);
         builder.HasMany(org => org.OrgDomainClaims).WithOne(orgDomClaim => orgDomClaim.Participant);
         builder.HasMany(org => org.OrgDomainRoleClaims).WithOne(OrgDomainRoleClaims => OrgDomainRoleClaims.Participant);
-
     }
 }

@@ -9,6 +9,8 @@ import { InfoComponent } from './info/info.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './navbar/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ParticipantService } from './shared/participant-service.service';
+import { InfoService } from './shared/info.service';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
     ParicipantsListComponent,
     InfoComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  providers: [ParticipantService, InfoService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ParticipantByIdDto } from '../models/dtos/participant-by-id-dto';
+import { InfoService } from '../shared/info.service';
 
 @Component({
   selector: 'app-info',
@@ -7,17 +9,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./info.component.css'],
 })
 export class InfoComponent implements OnInit {
-  constructor(private activeRoute: ActivatedRoute) {}
-  id: String | undefined;
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private infoService: InfoService
+  ) {}
+  teste: boolean = false
   ngOnInit(): void {
     this.activeRoute.params.subscribe((params) => {
-      this.id = params['id'];
-      this.getInfo();
+      this.infoService.setParticipantById(params['id']);
     });
   }
 
-  getInfo(): void
-  {
-
+  getParticipantByIdDto(): ParticipantByIdDto {
+    return this.infoService.getParticipant();
+  }
+  printData() {
+    console.log(this.infoService.getParticipant());
+    console.log(this.infoService.getParticipant().addressLine1);
+    console.log(this.infoService.getParticipant()["addressLine1"]);
   }
 }

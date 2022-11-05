@@ -4,5 +4,5 @@ namespace Application.Interfaces;
 
 public interface IOpenBankingServices
 {
-    Task<IEnumerable<Domain.Entities.Participant>> GetParticipantsAsync(CancellationToken cancellationToken);
+    Task<IEnumerable<Participant>> GetParticipantsAsync(CancellationToken cancellationToken);
 }

@@ -20,10 +20,7 @@ builder.Services.AddPersistence(config);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-        builder =>
-        {
-            builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-        });
+        builder => { builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader(); });
 });
 
 var app = builder.Build();

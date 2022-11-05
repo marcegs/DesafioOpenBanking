@@ -16,6 +16,7 @@ public class ApiResourceConfiguration : IEntityTypeConfiguration<ApiResource>
         builder.Ignore(a => a.CertificationExpirationDate);
 
         builder.HasMany(a => a.ApiDiscoveryEndpoints).WithOne(b => b.ApiResource);
-        builder.HasOne(a => a.AuthorisationServer).WithMany(b => b.ApiResources).HasForeignKey(a => a.AuthorisationServerId);
+        builder.HasOne(a => a.AuthorisationServer).WithMany(b => b.ApiResources)
+            .HasForeignKey(a => a.AuthorisationServerId);
     }
 }

@@ -1,25 +1,25 @@
-using Application.Common.Exceptions;
-using Application.Interfaces;
-using Domain.Entities;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-
+using Application.Common.Exceptions;
+using Application.Interfaces;
+using Domain.Entities;
 
 namespace Infra.Services;
 
 public class OpenBankingServices : IOpenBankingServices
 {
     private readonly IHttpClientFactory _httpClientFactory;
-    public IEnumerable<Participant>? Participants { get; set; }
 
     public OpenBankingServices(IHttpClientFactory httpClientFactory)
     {
         _httpClientFactory = httpClientFactory;
     }
+
+    public IEnumerable<Participant>? Participants { get; set; }
 
     public async Task<IEnumerable<Participant>> GetParticipantsAsync(CancellationToken cancellationToken)
     {

@@ -1,7 +1,7 @@
+using System.Diagnostics.CodeAnalysis;
 using Application.Interfaces;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.CodeAnalysis;
 
 namespace Persistence;
 
@@ -21,14 +21,11 @@ public class OpenBankingDbContext : DbContext, IOpenBankingDbContext
     public DbSet<OrgDomainClaim> OrgDomainClaims { get; set; }
     public DbSet<OrgDomainRoleClaim> OrgDomainRoleClaims { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfigurationsFromAssembly((typeof(OpenBankingDbContext).Assembly));
-    }
     public new async Task SaveChangesAsync(CancellationToken cancellationToken)
     {
         await base.SaveChangesAsync(cancellationToken);
     }
+
     public void CreateDb()
     {
         base.Database.EnsureCreated();
@@ -37,5 +34,10 @@ public class OpenBankingDbContext : DbContext, IOpenBankingDbContext
     public void DropDb()
     {
         base.Database.EnsureDeleted();
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(OpenBankingDbContext).Assembly);
     }
 }
