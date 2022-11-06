@@ -22,8 +22,7 @@ public class GetParticipantsHandler : IRequestHandler<GetParticipantsQuery, GetP
     {
         var participants = await _openBankingDbContext.Participants
             .AsNoTracking()
-            //.Skip(10)
-            //.Take(5)
+            .OrderBy(a=>a.LegalEntityName)
             .ProjectTo<ParticipantsDto>(_mapper.ConfigurationProvider)
             .ToListAsync(cancellationToken);
         return new GetParticipantsResponse

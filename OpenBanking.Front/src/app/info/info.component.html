@@ -1,10 +1,9 @@
 <br />
 <div class="container-fluid bg-light">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col">
+      <br />
       <h2>{{ getCurrentParticipant().name }}</h2>
-      <hr />
-      <p>{{ getCurrentParticipant().description }}</p>
       <table class="table">
         <thead>
           <tr>
@@ -43,13 +42,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <div class="col-md-4 justify-content-md-center">
-      <img
-        style="max-width: 40vh; min-height: 100px; max-height: 200px"
-        class=""
-        src="{{ getCurrentParticipant().logoUri }}"
-      />
     </div>
   </div>
 
@@ -170,9 +162,25 @@
             aria-expanded="false"
             attr.aria-controls="collapseAuthServer{{ i }}"
           >
-            authorisationServer: {{ authServer.authorisationServerId }}
+            <div class="row">
+
+              <div class="col-sm">
+                <h4 class="float-end">
+                  {{ authServer.customerFriendlyName }}
+                </h4>
+              </div>
+              <div class="col-sm">
+                <img
+                  style="width: auto; height: 80px"
+                  src="{{ authServer.customerFriendlyLogoUri }}"
+                />
+              </div>
+            </div>
           </div>
           <div id="collapseAuthServer{{ i }}" class="card-body collapse">
+            <h5 class="card-title">
+              {{ authServer.customerFriendlyDescription }}
+            </h5>
             <table class="table card-text">
               <thead>
                 <tr>
@@ -273,6 +281,10 @@
         </div>
         <br />
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   </div>
 
