@@ -1,105 +1,395 @@
-<h1>Info:</h1>
-<hr />
+<br />
 <div class="container-fluid bg-light">
-  <div class="row ">
+  <div class="row">
     <div class="col-md-8">
       <h2>{{ getCurrentParticipant().name }}</h2>
-      <hr>
-      <p>{{ getInfo().participantByIdDto.addressLine1 }}</p>
-      <p>{{ getInfo().participantByIdDto.addressLine2 }}</p>
+      <hr />
+      <p>{{ getCurrentParticipant().description }}</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>city</strong></td>
+            <td class="text-end">{{ getInfo().participantByIdDto.city }}</td>
+          </tr>
+          <tr>
+            <td><strong>postcode</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.postcode }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>addressLine1</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.addressLine1 }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>addressLine2</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.addressLine2 }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>countryOfRegistration</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.countryOfRegistration }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="col-md-4 justify-content-md-center">
       <img
-      style="max-width: 50vh; min-height: 100px; max-height: 200px;"
-      class="" src="{{ getCurrentParticipant().logoUri }}" />
+        style="max-width: 40vh; min-height: 100px; max-height: 200px"
+        class=""
+        src="{{ getCurrentParticipant().logoUri }}"
+      />
     </div>
   </div>
 
-
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Collapsible</button>
-
-  <div class="collapse" id="collapseExample">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>status</strong></td>
+            <td class="text-end">{{ getInfo().participantByIdDto.status }}</td>
+          </tr>
+          <tr>
+            <td><strong>organisationName</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.organisationName }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>createdOn</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.createdOn }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>companyRegister</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.companyRegister }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>registrationNumber</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.registrationNumber }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>registrationId</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.registrationId }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>legalEntityName</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.legalEntityName }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>registeredName</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.registeredName }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>parentOrganisationReference</strong></td>
+            <td class="text-end">
+              {{ getInfo().participantByIdDto.parentOrganisationReference }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    *ngIf="this.getInfo().participantByIdDto.authorisationServers.length > 0"
+  >
+    <hr />
+    <h3>Authorisation Servers:</h3>
+    <br />
+    <div
+      *ngFor="
+        let authServer of this.getInfo().participantByIdDto
+          .authorisationServers;
+        let i = index
+      "
+      class="row"
+    >
+      <div class="col">
+        <div class="card">
+          <div
+            class="card-header"
+            style="cursor: pointer"
+            data-bs-toggle="collapse"
+            attr.data-bs-target="#collapseAuthServer{{ i }}"
+            aria-expanded="false"
+            attr.aria-controls="collapseAuthServer{{ i }}"
+          >
+            authorisationServer: {{ authServer.authorisationServerId }}
+          </div>
+          <div id="collapseAuthServer{{ i }}" class="card-body collapse">
+            <table class="table card-text">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>autoRegistrationSuported</strong></td>
+                  <td class="text-end">
+                    {{ authServer.autoRegistrationSuported }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>supportsCiba</strong></td>
+                  <td class="text-end">
+                    {{ authServer.supportsCiba }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>supportsDCR</strong></td>
+                  <td class="text-end">
+                    {{ authServer.supportsDCR }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>developerPortalUri</strong></td>
+                  <td class="text-end">
+                    {{ authServer.developerPortalUri }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>termsOfServiceUri</strong></td>
+                  <td class="text-end">
+                    {{ authServer.termsOfServiceUri }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>openIDDiscoveryDocument</strong></td>
+                  <td class="text-end">
+                    {{ authServer.openIDDiscoveryDocument }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>payloadSigningCertLocationUri</strong></td>
+                  <td class="text-end">
+                    {{ authServer.payloadSigningCertLocationUri }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div *ngIf="authServer.apiResources.length > 0">
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-bs-toggle="collapse"
+                attr.data-bs-target="#collapseApiRes{{ i }}"
+                aria-expanded="false"
+                attr.aria-controls="collapseApiRes{{ i }}"
+              >
+                Mostrar API Resources
+              </button>
+
+              <div class="collapse" id="collapseApiRes{{ i }}">
+                <div
+                  *ngFor="let res of authServer.apiResources; let j = index"
+                  class="container-fluid"
+                >
+                  <br />
+                  <h4>Id: {{ res.apiResourceId }}</h4>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>apiVersion</strong></td>
+                        <td class="text-end">{{ res.apiVersion }}</td>
+                      </tr>
+                      <tr>
+                        <td><strong>apiFamilyType</strong></td>
+                        <td class="text-end">{{ res.apiFamilyType }}</td>
+                      </tr>
+                      <tr>
+                        <td><strong>familyComplete</strong></td>
+                        <td class="text-end">{{ res.familyComplete }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="this.getInfo().participantByIdDto.orgDomainClaims.length > 0">
+    <hr />
+    <h3>Organization Domain Claims:</h3>
+    <br />
+    <div
+      *ngFor="
+        let org of this.getInfo().participantByIdDto.orgDomainClaims;
+        let k = index
+      "
+      class="row"
+    >
+      <div class="col">
+        <div class="card">
+          <div
+            class="card-header"
+            style="cursor: pointer"
+            data-bs-toggle="collapse"
+            attr.data-bs-target="#collapseOrgDomain{{ k }}"
+            aria-expanded="false"
+            attr.aria-controls="collapseOrgDomain{{ k }}"
+          >
+            orgDomainClaims: {{ org.orgDomainClaimId }}
+          </div>
+          <div id="collapseOrgDomain{{ k }}" class="card-body collapse">
+            <table class="table card-text">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>authorityName</strong></td>
+                  <td class="text-end">
+                    {{ org.authorityName }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>authorisationDomainName</strong></td>
+                  <td class="text-end">
+                    {{ org.authorisationDomainName }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>status</strong></td>
+                  <td class="text-end">
+                    {{ org.status }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+  <div *ngIf="this.getInfo().participantByIdDto.orgDomainRoleClaims.length > 0">
+    <hr />
+    <h3>Organization Domain Role Claims:</h3>
+    <br />
+    <div
+      *ngFor="
+        let orgRole of this.getInfo().participantByIdDto.orgDomainRoleClaims;
+        let l = index
+      "
+      class="row"
+    >
+      <div class="col">
+        <div class="card">
+          <div
+            class="card-header"
+            style="cursor: pointer"
+            data-bs-toggle="collapse"
+            attr.data-bs-target="#collapseOrgDomainRole{{ l }}"
+            aria-expanded="false"
+            attr.aria-controls="collapseOrgDomainRole{{ l }}"
+          >
+            orgDomainClaims: {{ orgRole.orgDomainRoleClaimId }}
+          </div>
+          <div id="collapseOrgDomainRole{{ l }}" class="card-body collapse">
+            <table class="table card-text">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Role</strong></td>
+                  <td class="text-end">
+                    {{ orgRole.role }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>authorisationDomain</strong></td>
+                  <td class="text-end">
+                    {{ orgRole.authorisationDomain }}
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>status</strong></td>
+                  <td class="text-end">
+                    {{ orgRole.status }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
 </div>

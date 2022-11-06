@@ -8,4 +8,5 @@ export class ParticipantList {
   logoUri: String | undefined;
   name: String | undefined;
   active: boolean = false;
+  description: boolean = false;
 }

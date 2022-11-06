@@ -9,12 +9,12 @@ export class ParticipantByIdDto {
   addressLine1: string | undefined;
   addressLine2: string | undefined;
   city: string | undefined;
-  companyRegistrer: string | undefined;
+  companyRegister: string | undefined;
   country: string | undefined;
   countryOfRegistration: string | undefined;
   createdOn: string | undefined;
   legalEntityName: string | undefined;
-  organizationName: string | undefined;
+  organisationName: string | undefined;
   parentOrganisationReference: string | undefined;
   participantId: string | undefined;
   postcode: string | undefined;
