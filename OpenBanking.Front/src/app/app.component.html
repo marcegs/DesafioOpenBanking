@@ -1,12 +1,13 @@
-<header class="py-3 mb-3 border-bottom">
-  <app-navbar></app-navbar>
-</header>
-
-<div class="row" style="height: inherit;">
-  <div class="col-sm-4" style="height: 88vh; overflow-y: auto;">
-    <app-participants></app-participants>
-  </div>
-  <div class="bg-light col-sm-8" style="height: 88vh; overflow-y: auto;">
-    <router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<div style="height: 8vh;"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4" style="overflow-y: auto; max-height: 92vh;">
+      <app-participants></app-participants>
+    </div>
+    <div class="col-md-8" style="overflow-y: auto; max-height: 92vh;">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
+

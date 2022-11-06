@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ParticipantByIdDto } from '../models/dtos/participant-by-id-dto';
-import { InfoService } from '../shared/info.service';
+import { Info } from '../models/info';
+import { ParticipantList } from '../models/participants';
+import { InfoService } from '../services/info.service';
+import { ParticipantsService } from '../services/participants.service';
 
 @Component({
   selector: 'app-info',
@@ -10,21 +12,23 @@ import { InfoService } from '../shared/info.service';
 })
 export class InfoComponent implements OnInit {
   constructor(
-    private activeRoute: ActivatedRoute,
-    private infoService: InfoService
+    private infoService: InfoService,
+    private participantsService: ParticipantsService,
+    private activeRoute: ActivatedRoute
   ) {}
-  teste: boolean = false
   ngOnInit(): void {
     this.activeRoute.params.subscribe((params) => {
-      this.infoService.setParticipantById(params['id']);
+      this.infoService.setInfoById(params['id']);
+      if (this.participantsService.getCurrent().id == null) {
+        window.location.href = ""
+      }
     });
   }
-
-  getParticipantByIdDto(): ParticipantByIdDto {
-    return this.infoService.getParticipant();
+  getInfo(): Info {
+    //teste
+    return this.infoService.getInfo();
   }
-  printData() {
-    console.log(this.infoService.getParticipant());
-    console.log(this.infoService.getParticipant().status);
+  getCurrentParticipant(): ParticipantList {
+    return this.participantsService.getCurrent();
   }
 }

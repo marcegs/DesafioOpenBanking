@@ -4,25 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParticipantsComponent } from './participants/participants.component';
-import { ParicipantsListComponent } from './participants/paricipants-list/paricipants-list.component';
-import { InfoComponent } from './info/info.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SearchComponent } from './navbar/search/search.component';
+import { InfoComponent } from './info/info.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ParticipantService } from './shared/participant-service.service';
-import { InfoService } from './shared/info.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParticipantsComponent,
-    ParicipantsListComponent,
-    InfoComponent,
     NavbarComponent,
-    SearchComponent,
+    InfoComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [ParticipantService, InfoService],
-  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

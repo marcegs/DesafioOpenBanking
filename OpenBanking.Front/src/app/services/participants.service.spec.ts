@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ParticipantService } from './participant-service.service';
+import { ParticipantsService } from './participants.service';
 
-describe('OpenBankingService', () => {
-  let service: ParticipantService;
+describe('ParticipantsService', () => {
+  let service: ParticipantsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ParticipantService);
+    service = TestBed.inject(ParticipantsService);
   });
 
   it('should be created', () => {
