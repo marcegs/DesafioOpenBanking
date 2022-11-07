@@ -1,0 +1,9 @@
+[Unit]
+Description=Update Openbanking db
+Requires=openbanking-update.service
+[Timer]
+Unit=openbanking-update.service
+OnUnitInactiveSec=60m
+AccuracySec=1s
+[Install]
+WantedBy=timers.target

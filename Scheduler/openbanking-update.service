@@ -1,0 +1,9 @@
+[Unit]
+Description=Update OpenBanking DB
+Wants=openbanking-update.timer
+[Service]
+ExecStart=/home/marcelogs/.bin/update-db.sh
+WorkingDirectory=/home/marcelogs/.bin
+Slice=openbanking-update.slice
+[Install]
+WantedBy=multi-user.target

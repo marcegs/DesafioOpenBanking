@@ -21,7 +21,4 @@ export class InfoService {
         this.info.participantByIdDto = data.participantByIdDto;
       });
   }
-  public teste() {
-    // this.info.participantId = "123"
-  }
 }
