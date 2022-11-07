@@ -31,7 +31,6 @@ export class ParticipantsService {
   setCurrentById(id: string)
   {
     let cr = this.Participant.participants?.find(a=>a.id == id)
-    console.log(cr)
     if (cr != null) this.updateCurrent(cr)
   }
 }

@@ -19,7 +19,6 @@ export class InfoService {
       .get('api/v1/participant/' + id)
       .subscribe((data) => {
         this.info.participantByIdDto = data.participantByIdDto;
-        console.log(this.info.participantByIdDto)
       });
   }
   public teste() {

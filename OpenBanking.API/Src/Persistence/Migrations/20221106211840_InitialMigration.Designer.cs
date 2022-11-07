@@ -12,7 +12,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(OpenBankingDbContext))]
-    [Migration("20221104215225_InitialMigration")]
+    [Migration("20221106211840_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

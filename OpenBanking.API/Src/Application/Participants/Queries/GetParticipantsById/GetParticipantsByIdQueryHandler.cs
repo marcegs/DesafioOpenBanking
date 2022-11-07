@@ -7,12 +7,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Participants.Queries.GetParticipantsById;
 
-public class GetParticipantsByIdHandler : IRequestHandler<GetParticipantsByIdQuery, GetParticipantsByIdResponse>
+public class GetParticipantsByIdQueryHandler : IRequestHandler<GetParticipantsByIdQuery, GetParticipantsByIdResponse>
 {
     private readonly IMapper _mapper;
     private readonly IOpenBankingDbContext _openBankingDbContext;
 
-    public GetParticipantsByIdHandler(IOpenBankingDbContext openBankingDbContext, IMapper mapper)
+    public GetParticipantsByIdQueryHandler(IOpenBankingDbContext openBankingDbContext, IMapper mapper)
     {
         _openBankingDbContext = openBankingDbContext;
         _mapper = mapper;

@@ -16,7 +16,7 @@ export class ParticipantsComponent implements OnInit {
   getParticipants(): Participants {
     return this.ParticipantService.getParticipants();
   }
-  updateCurrent(part: ParticipantList){
-    this.ParticipantService.updateCurrent(part)
+  updateCurrent(part: ParticipantList) {
+    this.ParticipantService.updateCurrent(part);
   }
 }

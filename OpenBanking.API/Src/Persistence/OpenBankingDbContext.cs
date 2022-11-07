@@ -7,7 +7,7 @@ namespace Persistence;
 
 public class OpenBankingDbContext : DbContext, IOpenBankingDbContext
 {
-    public OpenBankingDbContext([NotNull] DbContextOptions options) : base(options)
+    public OpenBankingDbContext([NotNull] DbContextOptions<OpenBankingDbContext> options) : base(options)
     {
     }
 

@@ -19,13 +19,9 @@ export class InfoComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.params.subscribe((params) => {
       this.infoService.setInfoById(params['id']);
-      if (this.participantsService.getCurrent().id == null) {
-        window.location.href = ""
-      }
     });
   }
   getInfo(): Info {
-    //teste
     return this.infoService.getInfo();
   }
   getCurrentParticipant(): ParticipantList {

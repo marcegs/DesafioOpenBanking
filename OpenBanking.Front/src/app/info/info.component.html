@@ -1,9 +1,9 @@
 <br />
-<div class="container-fluid bg-light">
+<div class="container-fluid bg-light rounded border">
   <div class="row">
     <div class="col">
       <br />
-      <h2>{{ getCurrentParticipant().name }}</h2>
+      <h2>{{ getInfo().participantByIdDto.legalEntityName }}</h2>
       <table class="table">
         <thead>
           <tr>
@@ -138,6 +138,7 @@
       </table>
     </div>
   </div>
+
   <div
     *ngIf="this.getInfo().participantByIdDto.authorisationServers.length > 0"
   >
@@ -163,7 +164,6 @@
             attr.aria-controls="collapseAuthServer{{ i }}"
           >
             <div class="row">
-
               <div class="col-sm">
                 <h4 class="float-end">
                   {{ authServer.customerFriendlyName }}
@@ -346,6 +346,7 @@
       </div>
     </div>
   </div>
+
   <div *ngIf="this.getInfo().participantByIdDto.orgDomainRoleClaims.length > 0">
     <hr />
     <h3>Organization Domain Role Claims:</h3>
@@ -405,3 +406,4 @@
     </div>
   </div>
 </div>
+<br />

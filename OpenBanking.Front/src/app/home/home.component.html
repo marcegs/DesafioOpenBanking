@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div style="height: 8vh"></div>
+<div class="container-fluid">
+  <div class="row" *ngIf="isLogedIn()">
+    <div class="col-md-4" style="overflow-y: auto; max-height: 92vh">
+      <app-participants></app-participants>
+    </div>
+    <div class="col-md-8" style="overflow-y: auto; max-height: 92vh">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <br>
+  <br>
+  <div class="card" *ngIf="!isLogedIn()">
+    <div class="card-header">Faça login</div>
+    <div class="card-body">
+      <h5 class="card-title">
+        Você precisa estar logado para acessar essa página.
+      </h5>
+      <p class="card-text">
+        Faça login apertando o botão de "login" no topo superior esquerdo da tela.
+      </p>
+    </div>
+  </div>
+</div>
